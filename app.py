@@ -5,11 +5,11 @@ from streamlit_bokeh_events import streamlit_bokeh_events
 
 st.set_page_config(page_title="Creador de Fábulas", page_icon="📖", layout="centered")
 
-# --- Sidebar con página bloqueada ---
+# --- Sidebar ---
 with st.sidebar:
     st.markdown("## 📚 Navegación")
     st.markdown("---")
-    st.page_link("app.py", label="🎙️ Inicio", icon="🏠")
+    st.page_link("app.py", label="🏠 Inicio")
     st.markdown("🔒 **Creador de Fábulas** *(bloqueado)*")
     st.caption("Di la contraseña secreta para desbloquear")
 
@@ -18,7 +18,6 @@ st.markdown("<h1 style='text-align:center'>📖 Bienvenido al Creador de Fábula
 st.markdown("<p style='text-align:center; font-size:18px'>Oprime el botón y di la contraseña secreta para entrar</p>", unsafe_allow_html=True)
 st.markdown("---")
 
-# --- Botón de voz ---
 st.write("🎙️ Toca el botón y habla la contraseña:")
 
 stt_button = Button(label="🎤 Hablar", width=200)
@@ -50,7 +49,6 @@ result = streamlit_bokeh_events(
     debounce_time=0
 )
 
-# --- Lógica de contraseña ---
 CONTRASENA = "hola"
 
 if result:
